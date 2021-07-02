@@ -1,0 +1,34 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="blog_categories" resource="default" engine="innodb"
+           comment="blog categories Table">
+        <column xsi:type="int" name="id" padding="11" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
+        <column xsi:type="int" name="parent_id" padding="11" nullable="false" default="0" comment="Value ID"/>
+        <column xsi:type="varchar" name="name" nullable="true" length="255" comment="Title"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+    <table name="blogs" resource="default" engine="innodb"
+           comment="Blog Table">
+        <column xsi:type="int" name="id" padding="11" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
+        <column xsi:type="varchar" name="name" nullable="true" length="255" comment="blog name"/>
+        <column xsi:type="varchar" name="short_description" nullable="true" length="255" comment="blog short description"/>
+        <column xsi:type="varchar" name="description" nullable="true" length="255" comment="blog description"/>
+        <column xsi:type="smallint" name="status" padding="5" unsigned="true" nullable="false" identity="false" default="1" comment="Status"/>
+        <column xsi:type="varchar" name="thumbnail" nullable="true" length="255" default="http://example.com/media/catalog/tmp/category/mau-trang-tri-noi-that-biet-thu-nha-vuon-hien-dai_1.jpg" comment="blog thumbnail"/>
+        <column xsi:type="datetime" name="publish_date_from" on_update="false" nullable="true" comment="publish date from"/>
+        <column xsi:type="datetime" name="publish_date_to" on_update="false" nullable="true" comment="publish date to"/>
+        <column xsi:type="varchar" name="categories" length="255" nullable="false" comment="Value ID"/>
+        <column xsi:type="varchar" name="url_key" nullable="true" length="255" comment="blog url_key "/>
+        <column xsi:type="varchar" name="product_ids" nullable="true" length="255" comment="list product_id "/>
+        <column xsi:type="varchar" name="tags" nullable="true" length="255" comment="list tag "/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="CUSTOMER_RECORDS_COUPON_CODE_STORE_ID">
+            <column name="name"/>
+            <column name="url_key"/>
+        </constraint>
+    </table>
+</schema>

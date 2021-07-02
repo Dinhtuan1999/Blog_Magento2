@@ -1,0 +1,22 @@
+{
+    "smartosc_blog": {
+        "column": {
+            "id": true,
+            "name": true,
+            "short_description": true,
+            "description": true,
+            "status": true,
+            "thumbnail": true,
+            "gallery": true,
+            "publish_date_form": true,
+            "publish_date_to": true,
+            "categories": true,
+            "tags": true,
+            "url_key": true,
+            "product_ids": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

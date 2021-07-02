@@ -1,0 +1,26 @@
+
+
+sudo chmod -R 777 ./
+
+sudo service elasticsearch start
+
+sudo service nginx start
+
+
+# delete cache
+php bin/magento cache:flush
+
+php bin/magento cache:clean
+
+
+# create module
+php bin/magento module:status
+
+php bin/magento module:enable (name vendor)_(name module)
+
+#
+sudo rm -rf var/generation/*
+
+sudo rm -rf var/cache/* 
+
+php bin/magento setup:upgrade

@@ -1,0 +1,18 @@
+<?php
+?>
+<?php
+    $products = $block->getProducts();
+?>
+<h1>Sản phẩm liên quan </h1>
+<div class="row">
+    <?php foreach ($products as $pro): ?>
+            <div class="card col-4">
+                <img src="<?= $pro->getImage() ?>" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $pro->getName(); ?></h5>
+                    <p class="card-text"><?php  $pro->getPrice() ?></p>
+                    <a href="" class="btn btn-primary">View</a>
+                </div>
+            </div>
+    <?php endforeach; ?>
+</div>

@@ -1,0 +1,24 @@
+<?php
+$blog = $block->getBlog();
+//var_dump($blog);die();
+
+?>
+<div class="row">
+    <div class="col-12">
+        <article>
+            <header class="mb-4">
+                <h2 class="fw-bolder mb-1"><?php echo $blog['name'] ?></h2>
+                <div>
+                    <?php echo $blog['tags'] ?>
+                </div>
+            </header>
+            <figure class="mb-4"><img class="img-fluid rounded" style="width: 100%"
+                                      src="http://example.com/media/blog/images/<?php echo $blog['thumbnail'] ?>"
+                                      alt="..."/></figure>
+            <section class="mb-5">
+                <div class="font-weight-bold"><?php echo $blog['short_description'] ?></div>
+                <div><?php echo $blog['description'] ?></div>
+            </section>
+        </article>
+    </div>
+</div>

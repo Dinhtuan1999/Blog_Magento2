@@ -1,0 +1,30 @@
+<?php if ($block->getPagerHtml()): ?>
+    <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+<?php endif ?>
+<?php
+$blogColl = $block->getBlogCollection();
+$today =date("Y-m-d");
+?>
+<?php if ($blogColl) : ?>
+    <div class="table-wrapper orders-history">
+        <div class="row">
+            <?php foreach ($blogColl as $blog): ?>
+                    <div class="card col-4 text-center border-0 mb-4 shadow">
+                        <a href="blog/detail?id=<?= $blog['id'] ?>">
+                            <img src="<?= $blog['thumbnail'] ?>" class="card-img-top">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"><?= $blog['name'] ?></h5>
+                            <p class="card-text"></p>
+                            <a href="blog/detail?id=<?= $blog['id'] ?>" class="btn btn-lg btn-dark rounded-pill text-white">View</a>
+                        </div>
+                    </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php echo __('You have no any records in your custom collection.'); ?></span></div>
+<?php endif ?>

@@ -1,0 +1,36 @@
+<h1 align="center">Blog List</h1>
+<ul class="bxslider">
+    <?php
+    $data = $this->getData('blogs');
+    $auto = $this->getData('auto') ? "true" : "false";
+    $pager = $this->getData('pager') ? "true" : "false";
+    $speed = intval($this->getData('speed'));
+
+    foreach ($data as $d) {
+        ?>
+        <div class="products" style="float: left; padding: 8px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md">
+
+                        <div class="product_grid">
+
+                            <!-- Product -->
+                                <div class="product">
+                                    <div class="product_image"><img src="<?php echo $this->getData('mediaURL') . $d['thumbnail']; ?>" alt=""
+                                                                    style="width: 210px;height: 210px"></div>
+                                    <div class="product_content">
+                                        <div class="product_title"><a href="blog/detail?id=<?= $d['id'] ?>"><?php echo $d['name'] ?></a></div>
+                                        <div class="product_price"><?php echo $d['short_description'] ?></div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+</ul>
+

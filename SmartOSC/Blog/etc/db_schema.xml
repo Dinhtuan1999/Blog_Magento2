@@ -1,0 +1,24 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="smartosc_blog">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="name" length="255" nullable="false" comment="Name"/>
+        <column xsi:type="varchar" name="short_description" nullable="false" length="255" comment="short Description"/>
+        <column xsi:type="longtext" name="description" nullable="false" comment="Description"/>
+        <column xsi:type="varchar" name="status" length="255" nullable="false" comment="Status"/>
+        <column xsi:type="varchar" name="thumbnail" length="255" nullable="false" comment="Thumbnail"/>
+        <column xsi:type="varchar" name="gallery" length="255" nullable="false" comment="Gallery"/>
+        <column xsi:type="date" name="publish_date_form" nullable="false" comment="Publish Date Form"/>
+        <column xsi:type="date" name="publish_date_to" nullable="false" comment="Publish Date To"/>
+        <column xsi:type="varchar" name="categories" length="255" nullable="false" comment="Categories"/>
+        <column xsi:type="varchar" name="tags" length="255" nullable="false" comment="Tag"/>
+        <column xsi:type="varchar" name="url_key" length="255" nullable="false" comment="Url Key"/>
+        <column xsi:type="int" name="product_ids" nullable="false" comment="Product Id"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="smartosc_blog_name">
+            <column name="name"/>
+        </constraint>
+    </table>
+</schema>
